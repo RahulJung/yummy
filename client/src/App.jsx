@@ -43,9 +43,8 @@ class App extends React.Component {
     console.log('This is the state', this.state.data)
     return (
       <div>
-        <Resturants data={this.state.data}/>
-        {/* <PlaceSearch></PlaceSearch> */}
-        <Maps getData={this.getData}></Maps>
+        <Maps getData={this.getData} data={this.state.data}></Maps>
+        {/* <Resturants data={this.state.data}/> */}
       </div>
     )
   }

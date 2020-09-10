@@ -1,4 +1,5 @@
 import React from 'react';
+import {AiFillCompass} from "react-icons/ai";
 
  export default function Locate({ panTo }) {
   return (
@@ -15,7 +16,8 @@ import React from 'react';
           () => null
         );
       }}
-    > Current location
+    >
+     <AiFillCompass color="red" size="3em"/>
     </button>
   );
 }
