@@ -28,8 +28,10 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@reach/combobox": "^0.11.2",
     "@react-google-maps/api": "^1.9.12",
     "axios": "^0.20.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.4",
@@ -39,6 +41,7 @@
     "react-places-autocomplete": "^7.3.0",
     "react-scripts": "^3.4.3",
     "regenerator-runtime": "^0.13.7",
-    "styles-loader": "^2.0.0"
+    "styles-loader": "^2.0.0",
+    "use-places-autocomplete": "^1.4.2"
   }
 }
