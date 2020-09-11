@@ -31,7 +31,7 @@ const center = {
   lng: -84.37432319999999
 };
 
-function Maps({getData, data, getReview, review, rating, onStarClick, changeHandler, submitHandler, updateId, reviews}) {
+function Maps({getData, data, getReview, review, rating, onStarClick, changeHandler, submitHandler, updateId, reviews, cName}) {
   const {isLoaded, loadError } = useLoadScript({
     // Google API Key
     googleMapsApiKey: 'AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A',
@@ -70,7 +70,7 @@ function Maps({getData, data, getReview, review, rating, onStarClick, changeHand
       <div className='main-container'>
 
         <div className="bar">
-          <Resturants data={data} getReview={getReview} panTo={panTo} review={review} rating={rating} onStarClick={onStarClick} changeHandler={changeHandler} submitHandler={submitHandler} updateId={updateId} reviews={reviews}/>
+          <Resturants data={data} getReview={getReview} panTo={panTo} review={review} rating={rating} onStarClick={onStarClick} changeHandler={changeHandler} submitHandler={submitHandler} updateId={updateId} reviews={reviews} cName={cName}/>
         </div>
 
         <div className="map">

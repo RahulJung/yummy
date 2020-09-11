@@ -22,9 +22,9 @@ const getReviewsByID = (Id, callback) => {
   });
 };
 
-const postReview = (id, rating, review, callback) => {
+const postReview = (id, cName, rating, review, callback) => {
   connection.query(
-    `INSERT INTO reviews (id, rating, review) VALUES ('${id}', '${rating}','${review}')`,
+    `INSERT INTO reviews (id, cName, rating, review) VALUES ('${id}','${cName}', '${rating}','${review}')`,
     (err, data) => {
       if (err) {
         console.log("problem posting reviews in query");

@@ -14,6 +14,7 @@ function ReviewButton(props) {
       onClick={bool => setForm(bool)}
       review={props.review}
       rating={props.rating}
+      cName={props.cName}
       onStarClick={props.onStarClick}
       changeHandler={props.changeHandler}
       submitHandler={props.submitHandler}

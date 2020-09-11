@@ -4,6 +4,7 @@ import Resturants from './components/Resturants.jsx'
 import  PlaceSearch from'./components/PlaceSearch.jsx'
 import './styles/styles.css';
 import Maps from './components/Maps.jsx';
+import CustomizedDialogs from './components/D.jsx'
 
 
 class App extends React.Component {
@@ -11,8 +12,9 @@ class App extends React.Component {
     super()
     this.state = {
       data: [],
-      lat: 33.8231296,
-      lng: -84.37432319999999,
+      lat: null,
+      lng: null,
+      cName: '',
       reviews: [],
       id: '',
       review: '',
@@ -80,6 +82,7 @@ class App extends React.Component {
   submitHandler(e) {
     e.preventDefault();
     axios.post("/add", {
+      cName: this.state.cName,
       review: this.state.review,
       rating: this.state.rating,
       id: this.state.id,
@@ -89,6 +92,7 @@ class App extends React.Component {
       // eslint-disable-next-line no-unused-vars
       .then(() => {
         this.setState({
+          cName:'',
           review: '',
           rating: 0,
           id: this.state.id,
@@ -100,7 +104,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('This is the state', this.state.reviews)
+    console.log('This is the state', this.state.data)
     return (
       <div>
         <Maps
@@ -114,9 +118,12 @@ class App extends React.Component {
         submitHandler={this.submitHandler}
         updateId={this.updateId}
         reviews={this.state.reviews}
+        cName={this.state.cName}
         >
         </Maps>
         {/* <Resturants data={this.state.data}/> */}
+        <CustomizedDialogs/>
+
       </div>
     )
   }

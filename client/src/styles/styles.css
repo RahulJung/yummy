@@ -1,6 +1,7 @@
-/* body {
-  overflow: hidden;
-} */
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+}
 
 
 .main-container{
@@ -52,9 +53,88 @@
 
 .locate {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 2.5rem;
+  right: 0.5rem;
   background: none;
   border: none;
   z-index: 10;
 }
+
+.search {
+  position: relative;
+  padding-bottom: 10px;
+  /* top: 1rem; */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  /* z-index: 10; */
+}
+
+.search input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.photo {
+  /* height: 250px;
+  width: 300px; */
+  object-fit: contain;
+}
+
+.dis {
+  padding-left: 3%;
+}
+
+.bar-name{
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(43,39,60);
+  margin: 0 0 8px 0;
+  cursor: pointer;
+}
+
+.address {
+  margin: 8px 0 8px 0;
+}
+
+.hrs {
+  margin: 0 0 8px 0;
+}
+
+.btn{
+  display: flex;
+  flex-direction: row;
+}
+
+/* .show {
+
+} */
+
+
+.reviewBtn  {
+  background-color:rgb(244,65,62);
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  width: 150px;
+  border-radius: 4px;
+  border-color: rgb(204, 0, 0);
+}
+
+.btnW {
+  background-color:rgb(244,65,62);
+  color: white important;
+  font-weight: bold;
+  height: 35px;
+  width: 150px;
+  border-radius: 4px;
+  border-color: rgb(204, 0, 0);
+  /* margin-right: 5%; */
+}
+
+/* .show {
+padding-right: 80%;
+} */

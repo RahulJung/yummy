@@ -38,14 +38,20 @@ app.get("/reviews/:id", (req, res) => {
 
 app.post("/add", (req, res) => {
   console.log("Sucessfully posted data", req.body);
-  postReview(req.body.id, req.body.rating, req.body.review, (err, data) => {
-    if (err) {
-      console.log("problem getting tasks from server");
-      res.sendStatus(500);
-    } else {
-      res.send(data);
+  postReview(
+    req.body.id,
+    req.body.cName,
+    req.body.rating,
+    req.body.review,
+    (err, data) => {
+      if (err) {
+        console.log("problem getting tasks from server");
+        res.sendStatus(500);
+      } else {
+        res.send(data);
+      }
     }
-  });
+  );
 });
 
 app.listen(port, () => {

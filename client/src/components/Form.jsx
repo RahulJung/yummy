@@ -19,6 +19,14 @@ class Form extends React.Component {
               onStarClick={this.props.onStarClick}
             />
           </div>
+          <div className="review-customer-name">
+                <input
+                  name="cName"
+                  placeholder="Display name"
+                  value={this.props.customerName}
+                  onChange={this.props.changeHandler}
+                />
+          </div>
           <div>
             <textarea
             rows='5'
