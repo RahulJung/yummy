@@ -1,4 +1,5 @@
 import React, { isValidElement, useEffect } from 'react';
+import StarRatings from 'react-star-ratings';
 import "@reach/combobox/styles.css";
 import Resturants from './Resturants.jsx'
 import regeneratorRuntime from "regenerator-runtime";
@@ -26,11 +27,11 @@ const options = {
 };
 
 const center = {
-  lat: 37.090240,
-  lng: -95.712891,
+  lat: 30.267153,
+  lng: -97.743057,
 };
 
-function Maps({getData, data}) {
+function Maps({getData, data, getReview}) {
   const {isLoaded, loadError } = useLoadScript({
     // Google API Key
     googleMapsApiKey: 'AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A',
@@ -46,9 +47,12 @@ function Maps({getData, data}) {
   }, []);
 
 
-  const panTo = React.useCallback(({ lat, lng }) => {
+  const panTo = React.useCallback(({ lat, lng }, zoom) => {
+    if(!zoom) {
+      zoom = 13;
+    }
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(13);
+    mapRef.current.setZoom(zoom);
   }, []);
 
   if (loadError) return "Error";
@@ -66,7 +70,7 @@ function Maps({getData, data}) {
       <div className='main-container'>
 
         <div className="bar">
-          <Resturants data={data}/>
+          <Resturants data={data} getReview={getReview} panTo={panTo}/>
         </div>
 
         <div className="map">
@@ -104,7 +108,26 @@ function Maps({getData, data}) {
                 }}
               >
                 <div>
-                  {selected.name}
+                  {/* {selected.name} */}
+
+
+                  {selected.photos ?
+                    <img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=600&photoreference=${selected.photos['0'].photo_reference}&key=AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A`}/> :  null
+                  }
+                      {selected.name}
+                  <StarRatings
+                  rating={selected.rating}
+                  numberOfStars={5}
+                  name="rate1"
+                  starDimension="24px"
+                  starSpacing="0px"
+                  starRatedColor="rgb(255, 180, 0)"
+                  starHoverColor="rgb(255, 180, 0)"
+                ></StarRatings>
+
+
+
+
                 </div>
               </InfoWindow>
             ) : null}

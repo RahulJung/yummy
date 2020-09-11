@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 16px auto 16px auto;
+  /* margin: 16px auto 16px auto; */
 }
 
 .map {
@@ -38,6 +38,12 @@
   border-color: rgb(214, 214, 214);
   border-image: initial;
   border-radius: 4px;
+}
+
+.image
+{
+  height: 100px;
+  width: 100px;
 }
 
 .search{

@@ -14,12 +14,16 @@ class App extends React.Component {
       data: [],
       lat: null,
       lng: null,
+      reviews: [],
+      id: 0,
     }
     this.getData = this.getData.bind(this);
+    this.getReview = this.getReview.bind(this);
   }
 
   componentDidMount(){
     this.getData();
+    this.getReview();
   }
 
   getData(latitude = this.state.lat, longitude = this.state.lng){
@@ -39,11 +43,24 @@ class App extends React.Component {
     });
   }
 
+  getReview(id = this.state.id) {
+    axios.get(`/reviews/${id}`)
+    .then((res) => {
+      console.log('from axios get request: ', res);
+      this.setState({
+        reviews: res.data
+      });
+    })
+    .catch((err) => {
+      console.log('Error getitng the data', err)
+    })
+  }
+
   render() {
     console.log('This is the state', this.state.data)
     return (
       <div>
-        <Maps getData={this.getData} data={this.state.data}></Maps>
+        <Maps getData={this.getData} data={this.state.data} getReview={this.getReview}></Maps>
         {/* <Resturants data={this.state.data}/> */}
       </div>
     )
