@@ -24,7 +24,7 @@ export default function Search({ panTo, getData}) {
   } = usePlacesAutocomplete({
     requestOptions: {
       /* Define search scope here */
-      location: { lat: () => 30.267153, lng: () => -97.743057 },
+      location: { lat: () =>  33.8231296, lng: () => -84.37432319999999 },
       //the radius os in meters
       radius: 100 * 1000,
     },

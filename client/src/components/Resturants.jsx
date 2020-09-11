@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import StarRatings from 'react-star-ratings';
 import ReviewButton from './ReviewButton.jsx'
 
@@ -13,7 +13,7 @@ function Resturants(props) {
           <img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=600&photoreference=${item.photos['0'].photo_reference}&key=AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A`}/> :  null
         }
       </div>
-        <div href="" onClick={() => {props.updateId(item.place_id); props.getReview(item.place_id); props.panTo({ lat: item.geometry.location.lat, lng: item.geometry.location.lng }, 17)}}>
+        <div href="" onClick={() => {props.updateId(item.place_id); props.getReview(item.place_id); props.panTo({ lat: item.geometry.location.lat, lng: item.geometry.location.lng }, 18)}}>
         {item.name}
         </div>
        <StarRatings

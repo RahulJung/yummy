@@ -6,14 +6,13 @@ import './styles/styles.css';
 import Maps from './components/Maps.jsx';
 
 
-
 class App extends React.Component {
   constructor(){
     super()
     this.state = {
       data: [],
-      lat: null,
-      lng: null,
+      lat: 33.8231296,
+      lng: -84.37432319999999,
       reviews: [],
       id: '',
       review: '',
@@ -114,6 +113,7 @@ class App extends React.Component {
         changeHandler={this.changeHandler}
         submitHandler={this.submitHandler}
         updateId={this.updateId}
+        reviews={this.state.reviews}
         >
         </Maps>
         {/* <Resturants data={this.state.data}/> */}
