@@ -15,15 +15,27 @@ class App extends React.Component {
       lat: null,
       lng: null,
       reviews: [],
-      id: 0,
+      id: '',
+      review: '',
+      rating:0,
     }
     this.getData = this.getData.bind(this);
     this.getReview = this.getReview.bind(this);
+    this.changeHandler = this.changeHandler.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
+    this.onStarClick = this.onStarClick.bind(this);
+    this.updateId = this.updateId.bind(this);
   }
 
   componentDidMount(){
     this.getData();
     this.getReview();
+  }
+
+  updateId(id) {
+    this.setState({
+      id : id,
+    })
   }
 
   getData(latitude = this.state.lat, longitude = this.state.lng){
@@ -46,7 +58,7 @@ class App extends React.Component {
   getReview(id = this.state.id) {
     axios.get(`/reviews/${id}`)
     .then((res) => {
-      console.log('from axios get request: ', res);
+      console.log('from axios get request: ', res.data);
       this.setState({
         reviews: res.data
       });
@@ -56,11 +68,54 @@ class App extends React.Component {
     })
   }
 
+  onStarClick(nextValue) {
+    this.setState({ rating: nextValue });
+  }
+
+  changeHandler(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  submitHandler(e) {
+    e.preventDefault();
+    axios.post("/add", {
+      review: this.state.review,
+      rating: this.state.rating,
+      id: this.state.id,
+    })
+      .then(() => this.getReview(this.state.id))
+    // Clear the form once the form is submitted
+      // eslint-disable-next-line no-unused-vars
+      .then(() => {
+        this.setState({
+          review: '',
+          rating: 0,
+          id: this.state.id,
+        });
+      })
+      .catch((err) => {
+        console.log('Error posting reviews in Client', err);
+      });
+  }
+
   render() {
-    console.log('This is the state', this.state.data)
+    console.log('This is the state', this.state.reviews)
     return (
       <div>
-        <Maps getData={this.getData} data={this.state.data} getReview={this.getReview}></Maps>
+        <Maps
+        review={this.state.review}
+        rating={this.state.rating}
+        getData={this.getData}
+        data={this.state.data}
+        getReview={this.getReview}
+        onStarClick={this.onStarClick}
+        changeHandler={this.changeHandler}
+        submitHandler={this.submitHandler}
+        updateId={this.updateId}
+        >
+        </Maps>
         {/* <Resturants data={this.state.data}/> */}
       </div>
     )

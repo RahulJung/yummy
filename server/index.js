@@ -7,6 +7,7 @@ const port = 7070;
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.json());
 
 app.get("/foo", (req, res) => {
   // console.log(req.query.lat);
@@ -26,6 +27,18 @@ app.get("/foo", (req, res) => {
 app.get("/reviews/:id", (req, res) => {
   //console.log(req.params);
   getReviewsByID(req.params.id, (err, data) => {
+    if (err) {
+      console.log("problem getting tasks from server");
+      res.sendStatus(500);
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+app.post("/add", (req, res) => {
+  console.log("Sucessfully posted data", req.body);
+  postReview(req.body.id, req.body.rating, req.body.review, (err, data) => {
     if (err) {
       console.log("problem getting tasks from server");
       res.sendStatus(500);

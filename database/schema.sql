@@ -5,9 +5,7 @@ CREATE DATABASE mvp;
 USE mvp;
 
 CREATE TABLE reviews (
-  id INT NOT NULL AUTO_INCREMENT,
-  userName VARCHAR(50) NOT NULL,
+  id varchar(100) NOT NULL,
   rating float DEFAULT NULL,
-  review varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (id)
+  review varchar(1000) DEFAULT NULL
 );

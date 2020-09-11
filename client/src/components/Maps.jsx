@@ -31,7 +31,7 @@ const center = {
   lng: -97.743057,
 };
 
-function Maps({getData, data, getReview}) {
+function Maps({getData, data, getReview, review, rating, onStarClick, changeHandler, submitHandler, updateId}) {
   const {isLoaded, loadError } = useLoadScript({
     // Google API Key
     googleMapsApiKey: 'AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A',
@@ -70,7 +70,7 @@ function Maps({getData, data, getReview}) {
       <div className='main-container'>
 
         <div className="bar">
-          <Resturants data={data} getReview={getReview} panTo={panTo}/>
+          <Resturants data={data} getReview={getReview} panTo={panTo} review={review} rating={rating} onStarClick={onStarClick} changeHandler={changeHandler} submitHandler={submitHandler} updateId={updateId}/>
         </div>
 
         <div className="map">
@@ -83,7 +83,7 @@ function Maps({getData, data, getReview}) {
           onLoad={onMapLoad}
           >
           <Marker
-          position={center}
+          position={{ lat: 33.8231296, lng: -84.37432319999999 }}
           />
           {data.map((item) => (
               <Marker
@@ -124,10 +124,6 @@ function Maps({getData, data, getReview}) {
                   starRatedColor="rgb(255, 180, 0)"
                   starHoverColor="rgb(255, 180, 0)"
                 ></StarRatings>
-
-
-
-
                 </div>
               </InfoWindow>
             ) : null}
