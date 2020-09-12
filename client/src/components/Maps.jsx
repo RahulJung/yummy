@@ -110,21 +110,26 @@ function Maps({getData, data, getReview, review, rating, onStarClick, changeHand
                 <div>
                   {/* {selected.name} */}
 
-
+                  <div>
                   {selected.photos ?
-                    <img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=600&photoreference=${selected.photos['0'].photo_reference}&key=AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A`}/> :  null
+                    <img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${selected.photos['0'].photo_reference}&key=AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A`}/> :  null
                   }
-                      {selected.name}
+                  </div>
+                  <div className="bar-name">
+                  {selected.name}
+                  </div>
+                  <div>
                   <StarRatings
                   rating={selected.rating}
                   numberOfStars={5}
                   name="rate1"
                   starDimension="24px"
                   starSpacing="0px"
-                  starRatedColor="rgb(255, 180, 0)"
-                  starHoverColor="rgb(255, 180, 0)"
+                  starRatedColor="rgb(241,92,79)"
+                  starHoverColor="rgb(241,92,79)"
                 ></StarRatings>
-                </div>
+                  </div>
+              </div>
               </InfoWindow>
             ) : null}
           </GoogleMap>

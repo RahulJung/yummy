@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+// const env = require('../../.env')
 import Resturants from './components/Resturants.jsx'
 import  PlaceSearch from'./components/PlaceSearch.jsx'
 import './styles/styles.css';
@@ -104,7 +105,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('This is the state', this.state.data)
+    // console.log("This is the api", process.env.REACT_APP_API_KEY);
+    console.log('This is the state data', this.state.data)
     return (
       <div>
         <Maps
