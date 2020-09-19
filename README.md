@@ -1,11 +1,8 @@
 # Welcome To Yummy
 
 Yummy is an online directory that allows users to search for local restaurant, bar and cafe.
-
-Below you will find our User Stories, Tech Stack, Installation Guidance, and Wire Frames.
-
 _________________________
-HOME PAGE VIEW
+# HOME PAGE VIEW
 
 ![mvp1](https://user-images.githubusercontent.com/34432441/93687826-edca9c80-fa8e-11ea-8cad-cb91bc1c7c85.png)
 
@@ -23,7 +20,7 @@ _________________________
 _______________________
 
 # Yet to Come
-* As a user, I want to be ablr to signup/login to my profile
+* As a user, I want to be able to signup/login to my profile
 * As a user, I want to sort the resturants by ratings and distance
 * As a restaurant owner, I want to be able to add my restaurant to the app and upload pictures
 _______________________
@@ -54,7 +51,7 @@ Yummy uses a number of open source projects to work properly:
 </table>
 
 _______________________
-### Get Started
+# Get Started
 To run the app in your localhost, you will need to take the following steps:
 - MySQL should be running on your machine
 - Add user and password to config.js file in database folder
