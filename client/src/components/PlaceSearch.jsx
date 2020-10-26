@@ -1,4 +1,4 @@
-import React, { isValidElement, useEffect } from 'react';
+import React, { isValidElement, useEffect } from "react";
 import "@reach/combobox/styles.css";
 import regeneratorRuntime from "regenerator-runtime";
 import usePlacesAutocomplete, {
@@ -13,8 +13,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 
-
-export default function Search({ panTo, getData}) {
+export default function Search({ panTo, getData }) {
   const {
     ready,
     value,
@@ -24,16 +23,14 @@ export default function Search({ panTo, getData}) {
   } = usePlacesAutocomplete({
     requestOptions: {
       /* Define search scope here */
-      location: { lat: () =>  33.8231296, lng: () => -84.37432319999999 },
+      location: { lat: () => 33.8231296, lng: () => -84.37432319999999 },
       //the radius os in meters
       radius: 100 * 1000,
     },
   });
 
-
-
   const handleInput = (e) => {
-     // Update the keyword of the input element
+    // Update the keyword of the input element
     setValue(e.target.value);
   };
 
@@ -46,7 +43,7 @@ export default function Search({ panTo, getData}) {
     clearSuggestions();
 
     try {
-    // Get latitude and longitude via utility functions
+      // Get latitude and longitude via utility functions
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
       panTo({ lat: lat, lng: lng });
