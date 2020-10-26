@@ -4,7 +4,7 @@ Yummy is an online directory that allows users to search for local restaurant, b
 _________________________
 # HOME PAGE VIEW
 
-![Uploading x.gif…]()
+![Screenshot from 2020-10-21 23-49-35](https://user-images.githubusercontent.com/34432441/97205490-eed9a280-178d-11eb-9350-8ad0822be75f.png)
 
 _________________________
 # User Stories
@@ -61,5 +61,5 @@ From terminal in the index folder:
 ```
 $ npm install
 $ npm run test
-$ npm start
+$ npm run start
 ```
