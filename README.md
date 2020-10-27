@@ -1,6 +1,6 @@
 # Welcome To Yummy
 
-Yummy is an online directory that allows users to search for local restaurant, bar and cafe.
+Yummy is an online directory that allows users to search for local restaurants, bars and cafes.
 
 ---
 
