@@ -4,7 +4,7 @@ import StarRatings from "react-star-ratings";
 import ReviewButton from "./ReviewButton.jsx";
 import Modal from "react-modal";
 import CustomizedDialogs from "./D.jsx";
-import API_KEY from "../config";
+// import API_KEY from "../config";
 
 function Resturants(props) {
   const [showReview, setReview] = useState(false);

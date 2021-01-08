@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import API_KEY from "./config";
+// import API_KEY from "./config";
 // const env = require('../../.env')
 import Resturants from "./components/Resturants.jsx";
 import PlaceSearch from "./components/PlaceSearch.jsx";

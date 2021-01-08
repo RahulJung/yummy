@@ -6,7 +6,8 @@ import regeneratorRuntime from "regenerator-runtime";
 import Locate from "./FindMe.jsx";
 import Search from "./PlaceSearch.jsx";
 import "../styles/styles.css";
-import API_KEY from "../config";
+// import API_KEY from "../config";
+const API_KEY = 100;
 import {
   GoogleMap,
   useLoadScript,
