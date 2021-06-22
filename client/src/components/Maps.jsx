@@ -6,8 +6,7 @@ import regeneratorRuntime from "regenerator-runtime";
 import Locate from "./FindMe.jsx";
 import Search from "./PlaceSearch.jsx";
 import "../styles/styles.css";
-// import API_KEY from "../config";
-const API_KEY = 100;
+const API_KEY = ;
 import {
   GoogleMap,
   useLoadScript,
@@ -106,17 +105,11 @@ function Maps({
             <Marker position={{ lat: 33.8231296, lng: -84.37432319999999 }} />
             {data.map((item) => (
               <Marker
-                // key={`${item.geometry.location.lat}-${item.geometry.location.lng}`}
                 key={item.place_id}
                 position={{
                   lat: item.geometry.location.lat,
                   lng: item.geometry.location.lng,
                 }}
-                // icon={{
-                //   origin: new window.google.maps.Point(0, 0),
-                //   anchor: new window.google.maps.Point(15, 15),
-                //   scaledSize: new window.google.maps.Size(30, 30),
-                // }}
                 onClick={() => {
                   setSelected(item);
                 }}
@@ -163,7 +156,5 @@ function Maps({
     </div>
   );
 }
-
-///////////////////////////////////////////////////
 
 export default Maps;
