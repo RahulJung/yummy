@@ -99,7 +99,6 @@ function Maps({
             zoom={13}
             center={center}
             options={options}
-            // onClick={onMapClick}
             onLoad={onMapLoad}
           >
             <Marker position={{ lat: 33.8231296, lng: -84.37432319999999 }} />
@@ -126,8 +125,6 @@ function Maps({
                 }}
               >
                 <div>
-                  {/* {selected.name} */}
-
                   <div>
                     {selected.photos ? (
                       <img
