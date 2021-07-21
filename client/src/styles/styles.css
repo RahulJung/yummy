@@ -1,10 +1,10 @@
 body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 16px;
+  margin: 0;
 }
 
-
-.main-container{
+.main-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -41,13 +41,12 @@ body {
   border-radius: 4px;
 }
 
-.image
-{
+.image {
   height: 100px;
   width: 100px;
 }
 
-.search{
+.search {
   position: relative;
 }
 
@@ -87,11 +86,11 @@ body {
   padding-left: 3%;
 }
 
-.bar-name{
+.bar-name {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 24px;
   font-weight: bold;
-  color: rgb(43,39,60);
+  color: rgb(43, 39, 60);
   margin: 0 0 8px 0;
   cursor: pointer;
 }
@@ -104,7 +103,7 @@ body {
   margin: 0 0 8px 0;
 }
 
-.btn{
+.btn {
   display: flex;
   flex-direction: row;
 }
@@ -113,9 +112,8 @@ body {
 
 } */
 
-
-.reviewBtn  {
-  background-color:rgb(244,65,62);
+.reviewBtn {
+  background-color: rgb(244, 65, 62);
   color: white;
   font-weight: bold;
   height: 35px;
@@ -125,7 +123,7 @@ body {
 }
 
 .btnW {
-  background-color:rgb(244,65,62);
+  background-color: rgb(244, 65, 62);
   color: white important;
   font-weight: bold;
   height: 35px;
@@ -138,3 +136,57 @@ body {
 /* .show {
 padding-right: 80%;
 } */
+
+.slider {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+}
+
+.image {
+  width: 100vw;
+  /* padding-top: 30px; */
+  height: 70vh;
+  /* border-radius: 10px; */
+  background-size: cover;
+  background-position: 50%;
+  /* padding-top: 30px; */
+  background-color: #333;
+  object-fit: cover;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}

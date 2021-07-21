@@ -1,10 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Resturants from "./components/Resturants.jsx";
-import PlaceSearch from "./components/PlaceSearch.jsx";
 import "./styles/styles.css";
 import Maps from "./components/Maps.jsx";
 import CustomizedDialogs from "./components/D.jsx";
+import LandingPage from "./components/LandingPage.jsx";
 
 class App extends React.Component {
   constructor() {
@@ -108,6 +107,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <LandingPage />
         <Maps
           review={this.state.review}
           rating={this.state.rating}
@@ -122,7 +122,7 @@ class App extends React.Component {
           cName={this.state.cName}
         ></Maps>
         {/* <Resturants data={this.state.data}/> */}
-        <CustomizedDialogs />
+        {/* <CustomizedDialogs /> */}
       </div>
     );
   }
