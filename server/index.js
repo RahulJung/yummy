@@ -6,16 +6,19 @@ const app = express();
 const port = 7070;
 require("dotenv").config();
 
+const { key } = require("../api");
+
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 
 app.get("/foo", (req, res) => {
   // console.log(req.query.lat);
+  console.log("hello", key);
   const lat = req.query.lat;
   const lng = req.query.lng;
   axios
     .get(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&types=restaurant&key=AIzaSyDWflt-t3VjsLFlxPueOqMZikZLGV_pL2A`
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&types=restaurant&key=${key}`
     )
     .then((response) => {
       // console.log(response.data.results);

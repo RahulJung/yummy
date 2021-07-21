@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Reviews from "./Reviews.jsx";
+import API from "../../../apikey.js";
 import StarRatings from "react-star-ratings";
 import ReviewButton from "./ReviewButton.jsx";
 import Modal from "react-modal";
@@ -16,7 +17,7 @@ function Resturants(props) {
             <div className="photo">
               {item.photos ? (
                 <img
-                  src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${item.photos["0"].photo_reference}&key=${API_KEY}`}
+                  src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${item.photos["0"].photo_reference}&key=${API}`}
                 />
               ) : null}
             </div>

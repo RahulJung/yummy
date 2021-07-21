@@ -6,8 +6,8 @@ import regeneratorRuntime from "regenerator-runtime";
 import Locate from "./FindMe.jsx";
 import Search from "./PlaceSearch.jsx";
 import "../styles/styles.css";
-// import API_KEY from "../config";
-const API_KEY = 100;
+// import API from "../config";
+import API from "../../../apikey.js";
 import {
   GoogleMap,
   useLoadScript,
@@ -46,7 +46,7 @@ function Maps({
 }) {
   const { isLoaded, loadError } = useLoadScript({
     // Google API Key
-    googleMapsApiKey: API_KEY,
+    googleMapsApiKey: API,
     libraries,
   });
 
@@ -138,7 +138,7 @@ function Maps({
                   <div>
                     {selected.photos ? (
                       <img
-                        src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${selected.photos["0"].photo_reference}&key=${API_KEY}`}
+                        src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${selected.photos["0"].photo_reference}&key=${API}`}
                       />
                     ) : null}
                   </div>
@@ -163,7 +163,5 @@ function Maps({
     </div>
   );
 }
-
-///////////////////////////////////////////////////
 
 export default Maps;
