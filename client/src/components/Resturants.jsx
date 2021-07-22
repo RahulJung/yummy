@@ -5,19 +5,24 @@ import StarRatings from "react-star-ratings";
 import ReviewButton from "./ReviewButton.jsx";
 import Modal from "react-modal";
 import CustomizedDialogs from "./D.jsx";
-// import API_KEY from "../config";
 
 function Resturants(props) {
+  const message = "your place!";
+
   const [showReview, setReview] = useState(false);
   return (
-    <div>
+    <div className="barMain">
+      <div className="welcomeMessage">
+        <h2>Best Resturant in {message}</h2>
+      </div>
       <ul>
         {props.data.map((item, idx) => (
           <div className="bar-container" key={idx}>
-            <div className="photo">
+            <div>
               {item.photos ? (
                 <img
                   src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${item.photos["0"].photo_reference}&key=${API}`}
+                  className="barImage"
                 />
               ) : null}
             </div>
