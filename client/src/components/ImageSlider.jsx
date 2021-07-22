@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { SliderData } from "./SliderData.jsx";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Highlights from "./Highlights.jsx";
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
