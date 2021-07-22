@@ -99,7 +99,7 @@ function Maps({
         <div className="map">
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
-            zoom={13}
+            zoom={14}
             center={center}
             options={options}
             // onClick={onMapClick}
