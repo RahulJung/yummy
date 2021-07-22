@@ -41,8 +41,8 @@ class App extends React.Component {
     axios
       .get(`/foo`, {
         params: {
-          lat: latitude,
-          lng: longitude,
+          lat: latitude || 33.8231296,
+          lng: longitude || -84.37432319999999,
         },
       })
       .then((res) => {
@@ -106,23 +106,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mainContainer">
         <LandingPage />
-        <Maps
-          review={this.state.review}
-          rating={this.state.rating}
-          getData={this.getData}
-          data={this.state.data}
-          getReview={this.getReview}
-          onStarClick={this.onStarClick}
-          changeHandler={this.changeHandler}
-          submitHandler={this.submitHandler}
-          updateId={this.updateId}
-          reviews={this.state.reviews}
-          cName={this.state.cName}
-        ></Maps>
-        {/* <Resturants data={this.state.data}/> */}
-        {/* <CustomizedDialogs /> */}
+        <div className="num">
+          <Maps
+            review={this.state.review}
+            rating={this.state.rating}
+            getData={this.getData}
+            data={this.state.data}
+            getReview={this.getReview}
+            onStarClick={this.onStarClick}
+            changeHandler={this.changeHandler}
+            submitHandler={this.submitHandler}
+            updateId={this.updateId}
+            reviews={this.state.reviews}
+            cName={this.state.cName}
+          ></Maps>
+          {/* <Resturants data={this.state.data}/> */}
+          {/* <CustomizedDialogs /> */}
+        </div>
       </div>
     );
   }
