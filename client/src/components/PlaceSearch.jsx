@@ -1,6 +1,8 @@
 import React, { isValidElement, useEffect } from "react";
 import "@reach/combobox/styles.css";
 import regeneratorRuntime from "regenerator-runtime";
+import { FaSearch } from "react-icons/fa";
+FaSearch;
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -55,22 +57,25 @@ export default function Search({ panTo, getData }) {
 
   return (
     <div className="search">
-      <Combobox onSelect={handleSelect}>
-        <ComboboxInput
-          value={value}
-          onChange={handleInput}
-          disabled={!ready}
-          placeholder="Search your location"
-        />
-        <ComboboxPopover>
-          <ComboboxList>
-            {status === "OK" &&
-              data.map(({ id, description }) => (
-                <ComboboxOption key={id} value={description} />
-              ))}
-          </ComboboxList>
-        </ComboboxPopover>
-      </Combobox>
+      <div className="searchBox">
+        <Combobox onSelect={handleSelect}>
+          <ComboboxInput
+            value={value}
+            onChange={handleInput}
+            disabled={!ready}
+            placeholder="Search your location"
+          />
+          <ComboboxPopover>
+            <ComboboxList>
+              {status === "OK" &&
+                data.map(({ id, description }) => (
+                  <ComboboxOption key={id} value={description} />
+                ))}
+            </ComboboxList>
+          </ComboboxPopover>
+        </Combobox>
+      </div>
+      <FaSearch className="searchIcon" />
     </div>
   );
 }
