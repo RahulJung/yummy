@@ -5,6 +5,7 @@ import StarRatings from "react-star-ratings";
 import ReviewButton from "./ReviewButton.jsx";
 import Modal from "react-modal";
 import CustomizedDialogs from "./D.jsx";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 function Resturants(props) {
   const message = "your place!";
@@ -12,10 +13,9 @@ function Resturants(props) {
   const [showReview, setReview] = useState(false);
   return (
     <div className="barMain">
-      <div className="welcomeMessage">
-        <h2>Best Resturant in {message}</h2>
-      </div>
-      <ul>
+      <h1 className="welcomeMessage">Best Resturants in {message}</h1>
+      <h3 className="allResults">All Results</h3>
+      <ul className="wrapper">
         {props.data.map((item, idx) => (
           <div className="bar-container" key={idx}>
             <div>
@@ -42,19 +42,24 @@ function Resturants(props) {
                   );
                 }}
               >
-                {item.name}
+                <h2 className="barName">{item.name}</h2>
               </div>
-              <StarRatings
-                rating={item.rating}
-                numberOfStars={5}
-                name="rate1"
-                starDimension="24px"
-                starSpacing="0px"
-                starRatedColor="rgb(241,92,79)"
-                starHoverColor="rgb(241,92,79)"
-              ></StarRatings>
-
-              <div className="address">{item.vicinity}</div>
+              <div className="starContainer">
+                <StarRatings
+                  rating={item.rating}
+                  numberOfStars={5}
+                  name="rate1"
+                  starDimension="24px"
+                  starSpacing="0px"
+                  starRatedColor="rgb(241,92,79)"
+                  starHoverColor="rgb(241,92,79)"
+                ></StarRatings>
+                <div className="totalRating">{item.user_ratings_total}</div>
+              </div>
+              <div className="addContainer">
+                <FaMapMarkerAlt className="faMarker" />
+                <div className="address">{item.vicinity}</div>
+              </div>
 
               <div className="hrs">
                 {item.opening_hours ? (
@@ -70,7 +75,12 @@ function Resturants(props) {
                       </div>
                     )}
                   </div>
-                ) : null}
+                ) : (
+                  <div style={{ color: "red", fontWeight: "bold" }}>
+                    {" "}
+                    Closed{" "}
+                  </div>
+                )}
               </div>
 
               <div className="btn">
