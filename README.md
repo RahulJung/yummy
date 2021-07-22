@@ -6,7 +6,7 @@ Yummy is an online directory that allows users to search for local restaurants, 
 
 # HOME PAGE VIEW
 
-![](demo.gif)
+![demo](https://user-images.githubusercontent.com/34432441/126707572-d521cf22-c308-4adb-80f5-47098436047f.gif)
 
 ---
 
