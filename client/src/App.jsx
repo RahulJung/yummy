@@ -4,7 +4,6 @@ import "./styles/styles.css";
 import Maps from "./components/Maps.jsx";
 import CustomizedDialogs from "./components/D.jsx";
 import LandingPage from "./components/LandingPage.jsx";
-
 class App extends React.Component {
   constructor() {
     super();

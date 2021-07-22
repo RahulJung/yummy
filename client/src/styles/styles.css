@@ -1,6 +1,7 @@
 body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 16px;
+  width: 100%;
   margin: 0;
   box-sizing: border-box;
   background-color: #f5f5f5 !important;
@@ -179,13 +180,30 @@ body {
   font-size: 18px;
   display: block;
   /* margin-top: 50px; */
-  top: 30%;
-  left: 38%;
-  transform: translate(-50%, -50%);
+  top: 33%;
+  left: 39%;
+  /* transform: translate(150050%, 0); */
   color: #333;
   /* transform: translateY(-50%); */
   background-color: green;
   margin: auto;
+}
+
+@media (max-width: 1050px) {
+  .searchContainer {
+    position: absolute;
+    z-index: 1;
+    font-size: 18px;
+    display: block;
+    /* margin-top: 50px; */
+    top: 33%;
+    left: 28%;
+    /* transform: translate(150050%, 0); */
+    color: #333;
+    /* transform: translateY(-50%); */
+    background-color: green;
+    margin: auto;
+  }
 }
 
 .search {
@@ -308,11 +326,12 @@ padding-right: 80%;
 
 .slider {
   position: relative;
-  height: 70vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #333;
+  overflow: hidden;
 }
 
 .logo {

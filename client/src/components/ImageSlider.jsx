@@ -25,9 +25,6 @@ const ImageSlider = ({ slides }) => {
       <div className="logo">
         <h1>yummy</h1>
       </div>
-      {/* <div className="searchBar">
-        <Highlights />
-      </div> */}
       {SliderData.map((slide, index) => {
         return (
           <div

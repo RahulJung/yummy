@@ -11,13 +11,16 @@ class Form extends React.Component {
     return (
       <form onSubmit={this.props.submitHandler}>
         <div>
+          <h2 className="barName">Write your review!</h2>
           <div>
             <StarRatingComponent
+              className="starRating"
               name="rating"
               starCount={5}
               value={this.props.rating}
               onStarClick={this.props.onStarClick}
             />
+            <div>Select your rating</div>
           </div>
           <div className="review-customer-name">
             <input
@@ -29,8 +32,8 @@ class Form extends React.Component {
           </div>
           <div>
             <textarea
-              rows="5"
-              cols="50"
+              // rows="5"
+              // cols="50"
               placeholder="Review"
               name="review"
               value={this.props.review}
