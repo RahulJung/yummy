@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SliderData } from "./SliderData.jsx";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Highlights from "./Highlights.jsx";
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -22,6 +23,12 @@ const ImageSlider = ({ slides }) => {
     <section className="slider">
       <FaChevronLeft className="left-arrow" onClick={prevSlide} />
       <FaChevronRight className="right-arrow" onClick={nextSlide} />
+      <div className="logo">
+        <h1>yummy</h1>
+      </div>
+      {/* <div className="searchBar">
+        <Highlights />
+      </div> */}
       {SliderData.map((slide, index) => {
         return (
           <div
