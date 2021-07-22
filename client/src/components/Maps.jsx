@@ -60,7 +60,7 @@ function Maps({
 
   const panTo = React.useCallback(({ lat, lng }, zoom) => {
     if (!zoom) {
-      zoom = 13;
+      zoom = 14;
     }
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(zoom);
@@ -69,9 +69,10 @@ function Maps({
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
 
+  console.log(data);
   return (
-    <div>
-      <div className="search">
+    <div className="mapContainer">
+      <div className="searchContainer">
         <Search panTo={panTo} getData={getData} />
       </div>
       <div className="locate">
@@ -80,6 +81,7 @@ function Maps({
       <div className="main-container">
         <div className="bar">
           <Resturants
+            // place={"your place" || data[0].vicinity}
             data={data}
             getReview={getReview}
             panTo={panTo}
@@ -139,6 +141,7 @@ function Maps({
                     {selected.photos ? (
                       <img
                         src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=250&photoreference=${selected.photos["0"].photo_reference}&key=${API}`}
+                        className="barMiniImage"
                       />
                     ) : null}
                   </div>
